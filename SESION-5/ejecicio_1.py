@@ -17,4 +17,3 @@ elif nota >= "6.1" and nota <= "7":
     print ("Tu calificacion es A")
 else:
     print("Por favor ingrese una nota del 0 al 7 (decimales separados por puntos)")
-    

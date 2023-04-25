@@ -7,7 +7,7 @@
 #    75, si la calificación del examen es superior a 50 y si el número de proyectos completados es mínimo 2.
 
 def nota_final(examen, proyectos):
-    if examen > 90 and proyectos > 10:
+    if examen > 90 or proyectos > 10:
         return 100
     elif examen > 75 and proyectos >= 5:
         return 90
