@@ -25,7 +25,7 @@ def varieltal(param1, param2, *others): #el * forma tuplas
 
 varieltal("A1", "2B", "0", "XX")
 
-def varieltal_dos(param1, **others): #el * forma tuplas
+def varieltal_dos(param1, **others): #el ** forma diccionarios
     print(param1)
     print(others)
 
