@@ -1,38 +1,42 @@
 class MobilePhone:
     def __init__(self, manufacturer, screen_size, num_cores):
-        self.manufacturer_mobilephone = manufacturer
-        self.screen_size_mobilephone = screen_size
-        self.num_cores_mobilephone = num_cores
-        self.power_on = False
+        self.manufacturer = manufacturer
+        self.screen_size = screen_size
+        self.num_cores = num_cores
+        self.apps = []
+        self.status = False
 
     def turn_on(self):
         print("Encendido")
-        self.power_on = True
+        self.status = True
 
     def turn_off(self):
         print("Apagado")
-        self.power_on = False
+        self.status = False
 
     def install_app(self, app):
-        self.app_MobilePhone = app
+        self.apps.append (app)
         print("Instalando...")
 
     def uninstall_app(self, app):
-        self.app_MobilePhone = app
-        print("Desinstalando...")
+        if app in self.apps:
+            self.apps.remove (app)
+            print("Desinstalando...")
 
 samsung_s9 = MobilePhone("Samsung", 16.4, 7)
-print("Características = Fabricante: ", samsung_s9.manufacturer_mobilephone, " Pantalla: ", samsung_s9.screen_size_mobilephone, " Nucleos: ", samsung_s9.num_cores_mobilephone)
+print("Características = Fabricante: ", samsung_s9.manufacturer, " Pantalla: ", samsung_s9.screen_size, " Nucleos: ", samsung_s9.num_cores)
 
 samsung_s9.turn_on()
-print("power on", samsung_s9.power_on)
+print("power on", samsung_s9.status)
 
 samsung_s9.turn_off()
-print("power on", samsung_s9.power_on)
+print("power on", samsung_s9.status)
 
-samsung_s9.install_app(["Whatsapp", "Messenger", "Candy Crush", "Facebook", "Instagram"])
-print(samsung_s9.app_MobilePhone)
+samsung_s9.install_app("Whatsapp")
+samsung_s9.install_app("Candy Crush")
+samsung_s9.install_app("Messenger")
+print(samsung_s9.apps)
 
-samsung_s9.uninstall_app(["Whatsapp", "Messenger", "Candy Crush", "Facebook", "Instagram"])
-print(samsung_s9.app_MobilePhone)
+samsung_s9.uninstall_app("Candy Crush")
+print(samsung_s9.apps)
 
